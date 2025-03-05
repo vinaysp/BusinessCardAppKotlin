@@ -68,6 +68,6 @@ fun ProfileImage(profileName : String, modifier: Modifier = Modifier){
 @Composable
 fun GreetingPreview() {
     BusinessCardAppTheme {
-        Greeting("Android")
+        ProfileImage("vinay patel")
     }
 }
