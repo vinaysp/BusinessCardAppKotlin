@@ -46,6 +46,24 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     )
 }
 
+@Composable
+fun ProfileImage(profileName : String, modifier: Modifier = Modifier){
+    Column(modifier = Modifier.fillMaxSize(),
+       horizontalAlignment = Alignment.CenterHorizontally) {
+        Image(
+            painter = painterResource(R.drawable.icons8_android_os_100),
+            contentDescription = "profile image",
+            modifier = Modifier.fillMaxHeight(0.5f).fillMaxWidth(0.5f)
+        )
+        Text(
+            text = profileName,
+            textAlign = TextAlign.Center,
+            fontSize = 46.sp
+        )
+    }
+}
+
+
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
