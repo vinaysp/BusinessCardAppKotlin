@@ -56,19 +56,82 @@ class MainActivity : ComponentActivity() {
 
 
 @Composable
-fun ProfileImage(profileName : String, modifier: Modifier = Modifier){
-    Column(modifier = Modifier.fillMaxSize(),
-       horizontalAlignment = Alignment.CenterHorizontally) {
-        Image(
-            painter = painterResource(R.drawable.icons8_android_os_100),
-            contentDescription = "profile image",
-            modifier = Modifier.fillMaxHeight(0.5f).fillMaxWidth(0.5f)
-        )
-        Text(
-            text = profileName,
-            textAlign = TextAlign.Center,
-            fontSize = 46.sp
-        )
+fun ProfileImage(profileName : String,
+                 jobTitle: String,
+                 modifier: Modifier = Modifier) {
+    Box() {
+        Row() {
+            Column(
+                modifier = Modifier.fillMaxSize(),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Row {
+                    Image(
+                        painter = painterResource(R.drawable.icons8_android_os_100),
+                        contentDescription = "profile image",
+                        modifier = Modifier
+                            .fillMaxHeight(0.5f)
+                            .fillMaxWidth(0.5f)
+                    )
+                }
+                Row {
+                    Text(
+                        text = profileName,
+                        textAlign = TextAlign.Center,
+                        fontSize = 46.sp
+                    )
+                }
+                Row {
+                    Text(
+                        text = jobTitle,
+                        textAlign = TextAlign.Center,
+                        fontSize = 25.sp,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.padding(top = 10.dp, start = 10.dp)
+                    )
+                }
+            }
+        }
+
+        }
+    }
+@Composable
+fun ContactDetails(
+    phoneNumber: String,
+    emailAddress: String,
+    modifier: Modifier = Modifier
+) {
+    Box(
+        modifier = modifier.fillMaxSize().padding(bottom = 100.dp),
+        contentAlignment = Alignment.BottomCenter
+    ) {
+        Column(horizontalAlignment = Alignment.Start) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Image(
+                    painter = painterResource(R.drawable.icons8_android_phone_48),
+                    contentDescription = "phone icon",
+                    modifier = Modifier.padding(end = 8.dp)
+                )
+                Text(
+                    text = phoneNumber,
+                    fontSize = 15.sp,
+                    fontStyle = FontStyle.Italic
+                )
+            }
+            Spacer(modifier = Modifier.height(10.dp))
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Image(
+                    painter = painterResource(R.drawable.icons8_gmail_50),
+                    contentDescription = "gmail icon",
+                    modifier = Modifier.padding(end = 8.dp)
+                )
+                Text(
+                    text = emailAddress,
+                    fontSize = 15.sp,
+                    fontStyle = FontStyle.Italic
+                )
+            }
+        }
     }
 }
 
