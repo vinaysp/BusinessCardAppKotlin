@@ -140,6 +140,14 @@ fun ContactDetails(
 @Composable
 fun GreetingPreview() {
     BusinessCardAppTheme {
-        ProfileImage("vinay patel")
+        ProfileImage(
+            "Vinay Patel",
+            "Kotlin Wiz",
+            modifier = Modifier.background(Color.Magenta)
+        )
+        ContactDetails(
+            "012456789",
+            "vp@not_my_real_mail.com",
+        )
     }
 }
