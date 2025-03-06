@@ -36,10 +36,17 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             BusinessCardAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
+                Box(modifier = Modifier.fillMaxSize()) {
+                    ProfileImage(
+                        "Vinay Patel",
+                        "Kotlin Wiz",
+                        modifier = Modifier
+                            .background(Color.Magenta)
+                            .align(Alignment.Center)
+                    )
+                    ContactDetails(
+                        "012456789",
+                        "vp@not_my_real_mail.com",
                     )
                 }
             }
